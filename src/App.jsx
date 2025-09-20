@@ -37,7 +37,7 @@ fetch(`/api/weather/${city}`)
   return (
     <div className="app-container">
       <div className="weather-section">
-        <h1>Weather App</h1>
+        <h1>Welcome to KL Weather </h1>
         <div className="search-bar">
           <input
             type="text"
