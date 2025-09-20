@@ -3,8 +3,6 @@ name: CI/CD React WEATHER APP
 on:
   push:
     branches: [main]
-  pull_request:
-    branches: [main]
 
 permissions:
   contents: write
@@ -30,12 +28,8 @@ jobs:
       - name: Build the project
         run: npm run build
 
-      - name: Configure Git
-        run: |
-          git config --global user.name "Keerti Krishna Sreenivas S"
-          git config --global user.email "2300031039@kluniversity.in"
-
       - name: Deploy to GitHub Pages
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: npm run deploy
+        uses: peaceiris/actions-gh-pages@v6
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
