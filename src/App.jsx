@@ -15,7 +15,7 @@ function App() {
     setError(null);
 
 // CORRECT - Use a relative path
-fetch(`/api/weather/${city}`)
+fetch('http://localhost:9190/api/weather/bangalore')
       .then(response => {
         if (!response.ok) {
           throw new Error('City not found or server error.');
